@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #000000, #0d0e0d); /* Gradient from light cyan to cyan */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        h1 {
+            color: #e9c171;
+        }
+
+        h2 {
+            color: #e2ac6f; /* Green color for the predicted object */
+            margin-bottom: 20px;
+        }
+
+        img {
+            border: 2px solid #000000; /* Green border for the image */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #c74f18; /* Green background for the link */
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ff0505; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <h2>Predicted object: {{ label }}</h2>
+    <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Image" style="max-width: 400px; max-height: 400px;">
+    <br><br>
+    <a href="/">Upload another image</a>
+</body>
+</html>
